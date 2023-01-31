@@ -1,9 +1,10 @@
 import React from 'react'
-import {Message} from './message/Message'
+import Message from './message/Message'
 import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
-import {FriendMessage} from './friend-message/FriendMessage'
+import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
+
 /*
 * 1 - описать тип MessageType
 * 2 - описать тип MessagePropsType в файле Message.tsx
@@ -14,23 +15,22 @@ import avatar from './avatar.png'
 
 // нужно создать правильный тип вместо any
 export type MessageType = {
-    id: number,
-    user: {
-        avatar: string, // можно менять
-        name: string,  // можно менять
+    id:number,
+    user:{
+        avatar:string,
+        name:string,
     },
-    message: {
-        text: string, // можно менять
-        time: string, // можно менять
-    },
-
+    message:{
+        text:string,
+        time:string,
+    }
 }
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar, // можно менять
+        avatar: avatar, // ТИПИЗИРУЕТСЯ КАК string
         name: 'Some Name',  // можно менять
     },
     message: {
@@ -53,7 +53,7 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'}>
-            <div className={s2.hwTitle} style={{fontFamily:"M",fontSize: "22px" , lineHeight:"27px" ,fontWeight:500,fontStyle:"normal"}}>Homework #1</div>
+            <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
